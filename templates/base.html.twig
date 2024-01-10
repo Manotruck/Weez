@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock title %}</title>
+        
+    
+       {% block stylesheets %}
+       {{ encore_entry_link_tags('app')}}
+       
+       {% endblock %}
+        
+    </head>
+    <body>
+      <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+          <div class="container-fluid">
+          <a class="navbar-brand" href="#">WEEZ</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{(' ') }}>Acceuil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=""></a>
+            </li>
+            <a class="navbar-brand" href="{{('https://www.globalaxe.net/') }}">
+              <img src="{{('https://svgsilh.com/svg/158348-8bc34a.svg') }}" alt="Bootstrap" width="30" height="24">
+            </a> 
+            <a class="navbar-brand" href="{{('https://www.youtube.com/') }}">
+              <img src="{{('https://www.svgrepo.com/show/475700/youtube-color.svg') }}" alt="Bootstrap" width="30" height="24">
+            </a>
+            <a class="navbar-brand" href="{{('https://twitter.com/') }}">
+              <img src="{{('https://www.svgrepo.com/show/452123/twitter.svg') }}" alt="Bootstrap" width="30" height="24">
+            </a>
+            <a class="navbar-brand" href="{{('https://www.facebook.com/') }}">
+              <img src="{{('https://www.svgrepo.com/show/468781/facebook.svg') }}" alt="Bootstrap" width="30" height="24">
+            </a>
+            <a class="navbar-brand" href="{{('https://www.instagram.com/') }}">
+              <img src="{{('https://www.svgrepo.com/show/452229/instagram-1.svg')}}" alt="Bootstrap" width="30" height="24">
+            </a>  
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               Mes favoris
+              </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+            
+              <li><a class="dropdown-item" href="{{ path('app_amis') }}">Amis</a></li>
+              <li><a class="dropdown-item" href="{{ path('app_groupes') }}">Groupes</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="{{ path('app_mon_espace') }}">Mon espace</a></li>
+            </ul>
+            </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Mes médias
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            
+            <li><a class="dropdown-item" href="{{asset ('https://putsch.media/') }}">Putsch</a></li>
+            <li><a class="dropdown-item" href="#">QG</a></li>
+            <li><a class="dropdown-item" href="{{asset ('https://www.mediapart.fr/') }}">Médiapart</a></li>
+            <li><a class="dropdown-item" href="{{asset ('https://www.youtube.com/channel/UC9hHeywcPBnLglqnQRaNShQ') }}">Le fil d'actu</a></li>
+            <li><a class="dropdown-item" href="{{asset ('https://reporterre.net/?fbclid=IwAR3SupO9ks-TdmmNDeibsbJ9ZUE55cLPHvctQrPdH5B2j7i4HSh3wmJhRug')}}">Reporterre</a></li>
+            <li><a class="dropdown-item" href="{{asset ('https://www.brut.media/fr') }}">Brut</a></li>
+            <li><a class="dropdown-item" href="{{asset ('https://www.osonscauser.com/') }}">Osons causer</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Rechercher">
+        <button class="btn btn-outline-success" type="submit">Chercher</button>
+      </form>
+    </div>
+  </div>
+</nav>
+</header>    
+<main>   
+<main class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-6 col-xl-2 bg-dark">
+        <button type="button" class="btn btn-danger">S'inscrire</button>
+        <button type="button" class="btn btn-danger">Se connecter</button>
+      </div>
+      {% block main %}{% endblock main %}
+      <div class="col-12 col-md-6 col-xl-2 bg-dark">
+        <button type="button" class="btn btn-danger">Votre pub ici</button>
+        <choix>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="{{ url('app_amis') }}">Amis</a></li>
+            <li><a class="dropdown-item" href="{{ path('app_groupes') }}">Groupes</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{ path('app_mon_espace') }}">Mon espace</a></li>
+          </ul>
+        </li>
+        </choix>
+        <button type="button" class="btn btn-danger">Se connecter</button>
+      </div>
+    </div>
+</div>
+</main>
+
+{% block javascripts %}
+{{ encore_entry_script_tags('app')}}
+{% endblock %}
+</body>
+</html>
